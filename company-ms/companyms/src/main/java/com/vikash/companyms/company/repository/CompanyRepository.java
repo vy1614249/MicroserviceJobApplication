@@ -1,4 +1,4 @@
-package com.vikash.companyms.company;
+package com.vikash.companyms.company.repository;
 
 
 import com.vikash.companyms.company.model.Company;

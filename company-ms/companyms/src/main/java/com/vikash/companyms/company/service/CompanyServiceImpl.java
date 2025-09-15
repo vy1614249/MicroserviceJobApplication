@@ -1,6 +1,6 @@
 package com.vikash.companyms.company.service;
 
-import com.vikash.companyms.company.CompanyRepository;
+import com.vikash.companyms.company.repository.CompanyRepository;
 import com.vikash.companyms.company.model.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
