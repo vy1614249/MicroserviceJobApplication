@@ -13,8 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/company")
 public class CompanyController {
-    @Autowired
-    private CompanyService companyService;
+    private final CompanyService companyService;
+
+    public CompanyController(CompanyService companyService) {
+        this.companyService = companyService;
+    }
 
     @PostMapping("/create")
     public String createCompany(@RequestBody Company company){
@@ -43,5 +46,10 @@ public class CompanyController {
     @GetMapping("/getAllCompany")
     public List<Company> getAllCompany(){
         return companyService.getAll();
+    }
+
+    @GetMapping("/isvalid/{id}")
+    public boolean isCompanyWithIdValid(@PathVariable Long id){
+        return companyService.isCompanyWithIdValid(id);
     }
 }

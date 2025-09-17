@@ -14,4 +14,5 @@ public interface CompanyService {
     public String deleteById(Long id);
     public List<Company> getAll();
 
+    boolean isCompanyWithIdValid(Long id);
 }

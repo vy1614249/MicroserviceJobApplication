@@ -13,4 +13,6 @@ public interface JobService {
     String deleteJob(Long id);
     String updateJob(Long id,JobRequestDTO job);
     List<Job> findJobByCompanyName(String name);
+
+    boolean isJobWithIdValid(Long id);
 }

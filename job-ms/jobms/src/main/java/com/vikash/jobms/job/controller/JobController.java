@@ -41,7 +41,7 @@ public class JobController {
         return jobService.deleteJob(id);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<JobWithCompanyDTO> getJobById(@PathVariable Long id){
         JobWithCompanyDTO job=jobService.findById(id);
         if(job!=null){
@@ -63,6 +63,11 @@ public class JobController {
         List<Job> jobList=jobService.findJobByCompanyName(name);
         if(!jobList.isEmpty()) return new ResponseEntity<>(jobList,HttpStatus.FOUND);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/isvalid/{id}")
+    public boolean isJobWithIdValid(@PathVariable Long id){
+        return jobService.isJobWithIdValid(id);
     }
 
 }

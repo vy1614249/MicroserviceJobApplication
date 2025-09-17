@@ -3,6 +3,7 @@ package com.vikash.companyms.company.service;
 import com.vikash.companyms.company.repository.CompanyRepository;
 import com.vikash.companyms.company.model.Company;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,5 +62,11 @@ public class CompanyServiceImpl implements CompanyService{
     @Override
     public List<Company> getAll() {
         return companyRepository.findAll();
+    }
+
+    @Override
+    public boolean isCompanyWithIdValid(Long id) {
+        Optional<Company> company=companyRepository.findById(id);
+        return company.isPresent();
     }
 }

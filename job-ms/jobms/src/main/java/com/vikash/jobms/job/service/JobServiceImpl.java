@@ -179,4 +179,11 @@ public class JobServiceImpl implements JobService{
         }
         return List.of();
     }
+
+    @Override
+    public boolean isJobWithIdValid(Long id) {
+        Optional<Job> job=jobRepository.findById(id);
+        if(job.isPresent()) return true;
+        return false;
+    }
 }
