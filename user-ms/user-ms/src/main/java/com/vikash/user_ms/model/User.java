@@ -11,12 +11,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name = "candidate")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-
+    private Long authUserId;
     private String fullName;
     private String email;
     private String phone;
